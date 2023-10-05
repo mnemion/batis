@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 그룹명
+	namespace 안에 id는 절대 중복x
+ -->
+<mapper namespace="memberDB">
+	<select id="search_id" parameterType="string" resultType="memberdto">
+		select mno,mid,mpw,memail from member where mid = #{value} 
+	</select>
+	<select id ="copys" parameterType="string" resultType="copyrightdto">
+		select * from copyright order by cidx desc limit 0,1;
+	</select>
+</mapper>
